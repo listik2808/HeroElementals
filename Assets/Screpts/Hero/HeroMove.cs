@@ -11,14 +11,14 @@ namespace Screpts.Hero
         [SerializeField] private Camera _camera;
         private IInputServices _inputServices;
 
-        public HeroMove(IInputServices inputServices)
-        {
-            _inputServices = inputServices;
-        }
-
         private void Awake()
         {
             _inputServices = GameJoystick.InputServices;
+        }
+
+        private void Start()
+        {
+            _camera.GetComponent<CameraFollow>().Follow(gameObject);
         }
 
         private void Update() 

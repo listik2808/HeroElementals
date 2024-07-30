@@ -1,5 +1,4 @@
 ﻿using Screpts.Services.Input;
-using SimpleInputNamespace;
 using UnityEngine;
 
 namespace Screpts.Infrastructure
