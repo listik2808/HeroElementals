@@ -16,11 +16,6 @@ namespace Screpts.Hero
             _inputServices = GameJoystick.InputServices;
         }
 
-        private void Start()
-        {
-            _camera.GetComponent<CameraFollow>().Follow(gameObject);
-        }
-
         private void Update() 
         {
             Vector3 movementVector = Vector3.zero;
