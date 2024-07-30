@@ -1,4 +1,5 @@
-﻿using Screpts.Services.Input;
+﻿using Screpts.Infrastructure;
+using Screpts.Services.Input;
 using UnityEngine;
 
 namespace Screpts.Hero
@@ -10,9 +11,14 @@ namespace Screpts.Hero
         [SerializeField] private Camera _camera;
         private IInputServices _inputServices;
 
+        public HeroMove(IInputServices inputServices)
+        {
+            _inputServices = inputServices;
+        }
+
         private void Awake()
         {
-            _inputServices = Bootstrapper.InputServices;
+            _inputServices = GameJoystick.InputServices;
         }
 
         private void Update() 
