@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33770312bbe202e4696a25988d62e867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joystick: {fileID: 2095020827}
 --- !u!4 &114834541
 Transform:
   m_ObjectHideFlags: 0
