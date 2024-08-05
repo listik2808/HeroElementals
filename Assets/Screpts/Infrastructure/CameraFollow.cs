@@ -4,10 +4,10 @@ namespace Screpts.Infrastructure
 {
     public class CameraFollow : MonoBehaviour
     {
-        [SerializeField] private Transform _following;
         [SerializeField] private float _rotationAngleX;
         [SerializeField] private float distance;
         [SerializeField] private float _offsetY;
+        private Transform _following;
 
         private void LateUpdate()
         {

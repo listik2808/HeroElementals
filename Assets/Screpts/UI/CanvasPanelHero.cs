@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Screpts.Hero;
+using Screpts.ZonaTreeger;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,23 +15,24 @@ namespace Screpts.UI
         [SerializeField] private TMP_Text _valueHp;
         [SerializeField] private TMP_Text _valueMp;
         [SerializeField] private Button _exitButton;
+        [SerializeField] private Button _nextHero;
+        [SerializeField] private Button _previousHero;
 
-        public event Action OnExit;
+        public Button ExitButton => _exitButton;
+        public Button PreviousHero => _previousHero;
+        public Button NextHero => _nextHero;
 
         public void OnEnable()
         {
-            _exitButton.onClick.AddListener(Exit);
         }
 
         private void OnDisable()
         {
-            _exitButton.onClick.RemoveListener(Exit);
         }
 
-        private void Exit()
+        private void Show()
         {
-            gameObject.SetActive(false);
-            OnExit?.Invoke();
+
         }
     }
 }
