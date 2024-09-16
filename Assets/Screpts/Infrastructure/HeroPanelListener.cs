@@ -32,7 +32,8 @@ namespace Screpts.Infrastructure
 
         private void ClosePanelhero()
         {
-            _choiceHero.ActivateHeroMove();
+            _choiceHero.CurrentPlayer.MuveStart();
+            _choiceHero.CloseVizibleBody();
             _panelHero.gameObject.SetActive(false);
         }
 

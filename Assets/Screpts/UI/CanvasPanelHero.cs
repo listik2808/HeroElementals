@@ -21,18 +21,5 @@ namespace Screpts.UI
         public Button ExitButton => _exitButton;
         public Button PreviousHero => _previousHero;
         public Button NextHero => _nextHero;
-
-        public void OnEnable()
-        {
-        }
-
-        private void OnDisable()
-        {
-        }
-
-        private void Show()
-        {
-
-        }
     }
 }
