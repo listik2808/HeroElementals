@@ -137,6 +137,7 @@ namespace Screpts.ZonaTreeger
                     _heroes[i] = avatar;
                 }
             }
+            ArrangeIndex();
             _currentAvatarPlayer = avatar;
         }
 
@@ -145,6 +146,22 @@ namespace Screpts.ZonaTreeger
             _money.Pay(price);
             _currentAvatarPlayer.ModelIsPurchased();
             ActivateButton(_currentAvatarPlayer);
+        }
+
+        private void ArrangeIndex()
+        {
+            for (int i = 0; i < _heroes.Count; i++)
+            {
+                for (int j = i+1; j < _heroes.Count; j++)
+                {
+                    if (_heroes[i].Index > _heroes[j].Index)
+                    {
+                        AvatarPlayer temp = _heroes[i];
+                        _heroes[i] = _heroes[j];
+                        _heroes[j] = temp;
+                    }
+                }
+            }
         }
     }
 }

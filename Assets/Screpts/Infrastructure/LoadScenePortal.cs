@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace Screpts.Infrastructure
 {
-    public class LoadScene : MonoBehaviour
+    public class LoadScenePortal : MonoBehaviour
     {
         [SerializeField] private List<Portal> _portals = new List<Portal>();
 

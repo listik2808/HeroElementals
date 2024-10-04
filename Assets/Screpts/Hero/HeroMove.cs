@@ -8,15 +8,20 @@ namespace Screpts.Hero
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private float _movementSpeed;
-        [SerializeField] private Camera _camera;
+        private Camera _camera;
         private IInputServices _inputServices;
 
         private void Awake()
         {
-            _inputServices = GameJoystick.InputServices;
+            _inputServices = Game.InputServices;
         }
 
-        private void Update() 
+        private void Start()
+        {
+            _camera = Camera.main;
+        }
+
+        private void Update()
         {
             Vector3 movementVector = Vector3.zero;
             if(_inputServices.Axis.sqrMagnitude > 0.001f)

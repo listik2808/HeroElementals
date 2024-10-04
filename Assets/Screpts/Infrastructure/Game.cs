@@ -1,34 +1,22 @@
 ﻿using Screpts.Hero;
-using Screpts.ZonaTreeger;
-using System;
-using UnityEngine;
+using Screpts.Logic;
+using Screpts.Services.Input;
 
 namespace Screpts.Infrastructure
 {
-    public class Game : MonoBehaviour
+    public class Game
     {
-        [SerializeField] private CameraFollow _cameraFollow;
-        [SerializeField] private Player _player;
-        [SerializeField] private ChoosingHero _chooseHero;
+        public static IInputServices InputServices;
+        public GameStateMachine StateMachine;
 
-        private void OnEnable()
+        public Game(ICoroutineRunner coroutineRunner,LoadingCurtain curtain)
         {
-            
-        }
-
-        private void OnDisable()
-        {
-            
-        }
-
-        private void Start()
-        {
-            _cameraFollow.Follow(_player.gameObject);
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner),curtain);
         }
 
         private void ActivateHeroMove()
         {
-            _player.HeroMove.enabled = true;
+            //_player.HeroMove.enabled = true;
         }
     }
 }
