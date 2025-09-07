@@ -1,6 +1,6 @@
 using Screpts.Infrastructure;
+using Screpts.Infrastructure.State;
 using Screpts.Logic;
-using Screpts.Services.Input;
 using UnityEngine;
 
 namespace Screpts

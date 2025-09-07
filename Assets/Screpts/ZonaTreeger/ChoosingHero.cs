@@ -1,4 +1,6 @@
+using Screpts.Data;
 using Screpts.Hero;
+using Screpts.Infrastructure.Services.PersistenProgress;
 using Screpts.UI;
 using Screpts.Wallet;
 using System;
@@ -21,6 +23,7 @@ namespace Screpts.ZonaTreeger
         private AvatarPlayer _currentAvatarPlayer;
 
         public Player CurrentPlayer => _player;
+
 
         public event Action OpenPanelHero;
 
